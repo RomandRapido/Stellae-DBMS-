@@ -1,0 +1,232 @@
+@font-face{
+	font-family: main2;
+	src: url("database_fonts\\PPTelegraf-Regular.otf");
+}
+@font-face{
+	font-family: kaftan;
+	src: url("database_fonts\\kaftan-trial.otf");
+}
+
+.inputing{
+	padding: 7px 10px;
+	background-color: rgb(240, 240, 240);
+	border: none;
+	border-radius: 4px;
+	font-size: 12px;
+}
+.inputing2{
+	border-radius: 4px 4px 0px 0px;
+	border: none;
+	border-radius: 4px;
+	font-size: 12px;
+	padding: 7px 10px;
+}
+#placeholder{
+	font-family: main2;
+	position: absolute;
+	font-size: 12px;
+	top: 0;
+	transform: translateY(12px) translateX(15px);
+	transition: transform 0.15s;
+	color: gray;
+	pointer-events: none;
+}
+.placeholder{
+	font-family: main2;
+	position: absolute;
+	font-size: 12px;
+	top: 0;
+	transform: translateY(12px) translateX(15px);
+	transition: transform 0.15s;
+	color: gray;
+	pointer-events: none;
+}
+.inputing:focus,.inputing:valid{
+	outline-color: lightgray;
+	background-color: white;
+}
+.inputing:valid + .placeholder,
+.inputing:focus + .placeholder{
+	transform: translateY(-12px) translateX(15px);
+	color: black;
+}
+.cointain{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+fieldset{
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+.update_profile{
+	background: linear-gradient(350deg, rgba(197,195,243,1) 0%, rgba(206,206,222,1) 33%, rgba(255,255,255,1) 100%);;
+	border-radius: 10px;
+	border: 2px solid white;
+	padding: 30px;
+	width: 700px;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: 50%; right: 50%;
+	transform: translate(50%,-50%);
+	gap: 8px;
+}
+.select:focus{
+	color: black;
+}
+.select{
+	padding: 7px 10px;
+	font-family: Roboto Mono;
+	background-color: rgb(240, 240, 240);
+	color: gray;
+	font-size: 12px;
+	font-family: main2;
+	border-radius: 0px 0px 4px 4px;
+	border: none;
+}
+.profile_image{
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+}
+label{
+	font-family: main2;
+	font-size: 12px
+}
+img[alt] {
+	font-family: main2;
+	font-size: 12px;
+	border: 1px dashed black;
+ }
+.inputs{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.inputs,#school_input,#input_school,#school_input2{
+ 	padding: 0px;
+}
+
+#contain2{
+ 	gap: 10px;
+ 	padding: 0px;
+ }
+
+#school_input,#school_input2{
+	margin-top: 20px;
+}
+.general_info{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
+}
+#placeholder{
+	transform: translateY(8px) translateX(15px);
+}
+.inputing:valid + #placeholder3,
+.inputing:focus + #placeholder3{
+	transform: translateY(-17px) translateX(35px);
+	color: black;
+}
+.inputing:valid + #placeholder,
+.inputing:focus + #placeholder{
+	transform: translateY(-17px) translateX(15px);
+	color: black;
+}
+
+.text_area{
+	resize: none;
+	width: 97%;
+	height: 7ch;
+	font-family: main2;
+	padding: 7px;
+	font-size: 12px;
+	background-color: rgb(240, 240, 240);
+}
+.text_area:focus{
+	outline-color: lightgray;
+	background-color: white;
+}
+input[type="file"]{
+	font-family: main2;
+	font-size: 12px;
+	width: 170px;
+	background-color: lightgray;
+}
+input[type="submit"],.btn{
+	border: none;
+	font-family: main2;
+	font-size: 12px;
+	padding: 5px 10px;
+	background-color: rgb(200, 200, 200);
+	transition: all 0.5s;
+	cursor: pointer;
+	height: 25px;
+}
+#btn_p{
+	border: none;
+	font-family:'main2';
+	font-size: 12px;
+	padding:7px 10px 0px 10px;
+	transition: all 0.5s;
+	cursor: pointer;
+	height: 25px;
+}
+.btn_interest{
+	border: none;
+	font-family: main2;
+	font-size: 12px;
+	padding: 5px 10px;
+	transition: all 0.5s;
+	cursor: pointer;
+	background: linear-gradient(to left, #C683D7, #EB582Bff);
+	color: white;
+}
+.btn_interest:hover{
+	background: rgb(200, 200, 200);
+	color: black;
+}
+.btn:hover{
+	background: linear-gradient(to left, #C683D7, #EB582Bff);
+	color: white;
+}
+input[type="submit"]:hover{
+	background: linear-gradient(to left, #C683D7, #EB582Bff);
+	color: white;
+}
+.form_update_delete_user{
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(200, 200, 200, 0.7);
+	transform: scale(1);
+	z-index: 999;
+}
+.open_close{
+	transform: scale(0);
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+	font-family: main2;
+	font-size: 12px;
+}
+li{
+	padding: 2px;
+	transition: background 0.5s;
+	cursor: pointer;
+}
+li:hover{
+	background: linear-gradient(to left, #C683D7, #EB582Bff);
+	color: white;
+}
+#container_schools,#interest_here{
+	background-color: rgb(200, 200, 200, 1.0);
+	max-height: 100px;
+	overflow: hidden;
+	overflow-y: scroll;
+}

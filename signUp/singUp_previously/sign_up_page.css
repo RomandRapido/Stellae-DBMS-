@@ -1,0 +1,238 @@
+@font-face {
+  font-family: main2;
+  src: url("database_fonts\\PPTelegraf-Regular.otf");
+}
+@font-face {
+  font-family: kaftan;
+  src: url("database_fonts\\kaftan-trial.otf");
+}
+.header {
+  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  height: 50px;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 120px;
+  padding-right: 120px;
+  font-family: main2;
+  align-items: center;
+  font-size: 13px;
+  color: black;
+}
+#stellae {
+  font-family: kaftan;
+  color: black;
+  font-size: 20px;
+}
+button {
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  font-family: main2;
+  transition: all 0.5s;
+  color: #181729ff;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+}
+button:hover {
+  font-family: kaftan;
+  color: white;
+  font-size: 70px;
+}
+.go_to_here {
+  font-family: kaftan;
+  color: white;
+  font-size: 70px;
+}
+.go_to_here:active {
+  font-family: kaftan;
+  color: rgba(255, 255, 255, 0.05);
+  font-size: 70px;
+}
+.container_mighty {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+}
+#background {
+  background: linear-gradient(45deg, #c683d7, #eb582bff 70%);
+  flex: 1;
+  height: 100vh;
+  position: relative;
+}
+#background2 {
+  position: relative;
+  flex: 1;
+  height: 100vh;
+}
+#questions {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 360px;
+}
+#answers {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+#welcome_new_user {
+  font-size: 40px;
+  font-family: main2;
+  text-align: right;
+}
+.account_log_in {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#existing_acc {
+  font-family: main2;
+  text-align: right;
+}
+#log_in_button {
+  border: 3px solid transparent;
+  color: black;
+  background-color: #ff8f8f;
+  font-family: main2;
+  font-size: 12px;
+  padding: 5px 12px 5px 12px;
+  transition: all 0.3s;
+}
+#log_in_button:hover {
+  border-color: black;
+}
+#log_in_button:active {
+  background-color: rgba(255, 218, 34, 0.5);
+}
+#go_next_question_btn {
+  position: absolute;
+  top: 77%;
+  left: 65%;
+  border: 3px solid transparent;
+  color: black;
+  font-family: main2;
+  font-size: 25px;
+  padding: 5px 12px 5px 12px;
+  transition: all 0.3s;
+}
+#go_next_question_btn:hover {
+  background-color: #ffda22;
+}
+#go_next_question_btn:active {
+  background-color: rgba(255, 218, 34, 0.5);
+}
+
+.inputing {
+  padding: 7px 15px;
+  background-color: rgb(240, 240, 240);
+  border: none;
+  border-radius: 4px;
+  width: 345px;
+  font-size: 20px;
+}
+.placeholder {
+  font-family: main2;
+  font-weight: bold;
+  position: absolute;
+  font-size: 15px;
+  top: 0;
+  transform: translateY(-2px) translateX(15px);
+  transition: transform 0.15s;
+  color: gray;
+  pointer-events: none;
+}
+.placeholderLastName {
+  font-family: main2;
+  font-weight: bold;
+  position: absolute;
+  font-size: 15px;
+  top: 0;
+  transform: translateY(93px) translateX(15px);
+  transition: transform 0.15s;
+  color: gray;
+  pointer-events: none;
+}
+.inputing:focus,
+.inputing:valid {
+  outline-color: lightgray;
+  background-color: white;
+}
+.inputing:valid + .placeholder,
+.inputing:focus + .placeholder {
+  transform: translateY(-40px) translateX(15px);
+  color: black;
+}
+.inputing:valid + .placeholderLastName,
+.inputing:focus + .placeholderLastName {
+  transform: translateY(52px) translateX(15px);
+  color: black;
+}
+.cointain {
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#schools_available,
+#interests_available {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  width: 530px;
+}
+.schools_available,
+.interests_available {
+  font-size: 10px;
+  border: none;
+  color: white;
+  font-family: main2;
+  background-color: #40366aff;
+  border-radius: 25px;
+  padding: 5px 20px 5px 20px;
+  transition: all 0.5s;
+  width: auto;
+}
+.schools_available.selected,
+.interests_available.selected {
+  background-color: #eb582bff;
+}
+.schools_available:hover {
+  font-size: 20px;
+  font-family: kaftan;
+}
+.interests_available:hover {
+  font-size: 20px;
+  font-family: kaftan;
+}
+.terms_conditions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: main2;
+  font-size: 15px;
+}
+#user_agreed {
+  margin-bottom: 5px;
+}

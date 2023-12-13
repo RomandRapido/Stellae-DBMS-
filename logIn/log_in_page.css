@@ -1,0 +1,174 @@
+@font-face{
+	font-family: main2;
+	src: url("database_fonts\\PPTelegraf-Regular.otf");
+}
+@font-face{
+	font-family: kaftan;
+	src: url("database_fonts\\kaftan-trial.otf");
+}
+.header{
+	background-color: transparent;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	height: 50px;
+	top: 0;
+	right: 0;
+	left: 0;
+	position: fixed;
+	z-index: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 120px;
+	padding-right: 120px;
+	font-family: main2;
+	align-items: center;
+	font-size: 13px;
+	color: black;
+}
+.team_name{
+	color: white;
+}
+#stellae{
+	font-family: kaftan;
+	color: black;
+	font-size: 20px;
+}
+button{
+	border: none;
+	background-color: transparent;
+	text-align: left;
+	font-family: main2;
+	transition: all 0.5s;
+	color: #181729ff;
+	font-size: 40px;
+	cursor: pointer;
+	padding: 10px;
+}
+button:hover{
+	font-family: kaftan;
+	color: white;
+	font-size: 70px;
+}
+.container_mighty{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	align-items: center;
+}
+#background{
+	background:linear-gradient(45deg,#C683D7, #2C2E3Cff 70%);
+	flex:1;
+	height: 100vh;
+	position: relative;
+}
+#background2{
+	position: relative;
+	flex: 1;
+	height: 100vh;
+}
+#questions{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    gap: 20px;
+}
+#answers{
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+#welcome_new_user{
+	font-size: 50px;
+	font-family: main2;
+	text-align: left;
+	margin-bottom: 20px;
+}
+.account_log_in{
+	display: flex;
+	justify-content: flex-start;
+	gap: 10px;
+}
+#existing_acc{
+	font-family: main2;
+	text-align: left;
+}
+#sign_up_button{
+	border: 3px solid transparent;
+	color: black;
+	background-color: #FF8F8F;
+	font-family: main2;
+	font-size: 12px;
+	padding: 5px 12px 5px 12px;
+	transition: all 0.3s;
+}
+#sign_up_button:hover{
+	border-color: black;
+}
+#sign_up_button:active{
+	background-color: rgba(255, 218, 34, 0.5);
+}
+#log_in_to_acc{
+	position: absolute;
+	top: 77%;
+	left: 22%;
+	border: 3px solid transparent;
+	color: black;
+	font-family: main2;
+	font-size: 25px;
+	padding: 5px 12px 5px 12px;
+	transition: all 0.3s;
+}
+#log_in_to_acc:hover{
+	background-color: #FFDA22;
+}
+#log_in_to_acc:active{
+	background-color: rgba(255, 218, 34, 0.5);
+}
+
+.inputing{
+	padding: 7px 15px;
+	background-color: rgb(240, 240, 240);
+	border: none;
+	border-radius: 4px;
+	width: 345px;
+	font-size: 20px;
+}
+.placeholder{
+	font-family: main2;
+	font-weight: bold;
+	position: absolute;
+	font-size: 15px;
+	top: 0;
+	transform: translateY(-2px) translateX(15px);
+	transition: transform 0.15s;
+	color: gray;
+	pointer-events: none;
+}
+.inputing:focus,.inputing:valid{
+	outline-color: lightgray;
+	background-color: white;
+}
+.inputing:valid + .placeholder,
+.inputing:focus + .placeholder{
+	transform: translateY(-40px) translateX(15px);
+	color: white;
+}
+.cointain{
+	position: relative;
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}

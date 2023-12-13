@@ -1,0 +1,442 @@
+.up_button.action_btns.liked {
+  background-color: #c683d7;
+}
+@font-face {
+  font-family: main2;
+  src: url("database_fonts\\PPTelegraf-Regular.otf");
+}
+@font-face {
+  font-family: kaftan;
+  src: url("database_fonts\\kaftan-trial.otf");
+}
+body {
+  margin-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.header {
+  background: linear-gradient(to left, #eb582bff, #c683d7, #eb582bff);
+  padding-top: 10px;
+  padding-bottom: 5px;
+  height: 50px;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 120px;
+  padding-right: 120px;
+  font-family: main2;
+  align-items: center;
+  font-size: 13px;
+  color: black;
+}
+.account {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  align-items: center;
+}
+.username_image {
+  width: 45px;
+  height: 45px;
+  border-radius: 35px;
+}
+#stellae {
+  font-family: kaftan;
+  color: black;
+  font-size: 20px;
+}
+.our_user {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  align-items: center;
+}
+p {
+  margin: 0;
+}
+.username_hero {
+  font-size: 25px;
+  font-weight: bold;
+}
+.user_details {
+  font-family: main2;
+  font-size: 13px;
+  color: #2c2e3cff;
+}
+.profile_image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+.user_details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.div_for_user_details {
+  color: #737373;
+}
+.follower_following {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.top_bottom_divs_user_related {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+.account_details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.marquee_tag_interest {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: main2;
+  font-size: 12px;
+}
+a {
+  color: inherit;
+}
+a:hover {
+  color: #eb582bff;
+}
+.stat_summary {
+  display: flex;
+  gap: 15px;
+  font-family: main2;
+  font-size: 12px;
+  color: #181729ff;
+}
+.stats {
+  font-size: 15px;
+  font-family: main2;
+  font-weight: bold;
+}
+.stat_summary {
+  border: solid 3px #181729ff;
+  border-radius: 12px;
+  padding: 10px;
+}
+.quick_description {
+  font-family: main2;
+  font-size: 15px;
+}
+.account_details_stats {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+  align-items: center;
+}
+.top_stat_summary,
+.bottom_stat_summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Title {
+  font-family: main2;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.top5_topics {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid #181729ff;
+  border-radius: 5px;
+  padding: 7px 10px 7px 10px;
+  margin-top: -2px;
+}
+.paper_for_each {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #181729ff;
+  border-radius: 5px;
+  padding: 7px 10px 7px 10px;
+  margin-top: -2px;
+}
+.rating_topics {
+  display: flex;
+  gap: 15px;
+}
+.top5_tags_user {
+  display: flex;
+  flex-direction: column;
+}
+.topic_btn {
+  font-family: main2;
+  font-size: 15px;
+  padding: 3px 10px 3px 10px;
+  border: none;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: none;
+}
+.topic_related_btn {
+  font-family: main2;
+  font-size: 12px;
+  padding: 3px 10px 3px 10px;
+  border: none;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: none;
+}
+
+.prime_competencies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.topic_related_btn:hover {
+  color: black;
+  background-color: #ffda22;
+}
+.topic_btn:hover {
+  color: black;
+  background-color: #ffda22;
+}
+.rating_topics {
+  font-family: main2;
+  font-size: 12px;
+}
+.awards_btn_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.awardee_btn {
+  padding: 10px;
+  font-family: main2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  background: linear-gradient(to left, #ffda22, #40366aff);
+  border-radius: 12px;
+}
+.statisticss {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.paper_top_paper {
+  font-family: main2;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+.paper_title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.paper_date {
+  margin-bottom: 10px;
+}
+.paper_abstract {
+  margin-bottom: 20px;
+}
+.ViewMore {
+  font-size: 12px;
+  font-family: main2;
+  border: none;
+  background-color: transparent;
+  transition: all 0.5s;
+  padding: 5px 10px 5px 10px;
+}
+.ViewMore:hover {
+  background: linear-gradient(to left, #40366aff, #181729ff);
+  color: white;
+}
+.whole_user_with_main_connection {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  gap: 15px;
+}
+.main_connection {
+  display: flex;
+  flex-direction: column;
+}
+.connection_btn {
+  border: none;
+  background-color: transparent;
+  font-family: main2;
+  text-align: left;
+  transition: all 0.5s;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+.chosen_inscription {
+  color: black;
+  background-color: lightgray;
+  border: none;
+  font-family: main2;
+  text-align: left;
+  transition: all 0.2s;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+.chosen_inscription:active {
+  transform: translate(5px, 5px);
+}
+.selected_inscription {
+  background-color: #af83b5;
+}
+#incription_types {
+  display: flex;
+  margin-bottom: 20px;
+}
+.connection_btn:hover {
+  color: white;
+  background-color: #40366aff;
+}
+.connection_btn1:hover {
+  color: white;
+  background-color: #2c2e3cff;
+}
+.connection_btn2:hover {
+  color: white;
+  background-color: #346a77ff;
+}
+
+.connection_btn3:hover {
+  color: white;
+  background-color: #eb582bff;
+}
+.username_with_edit_profile {
+  display: flex;
+  justify-content: space-between;
+}
+.user_n_vewer_options {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.edit_profile {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: #346a77ff;
+  font-family: main2;
+  padding: 5px;
+}
+.view_papers_profile {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: #eb582bff;
+  font-family: main2;
+  padding: 5px;
+}
+.follow_btn2 {
+  background: linear-gradient(to left, #c683d7, #181729ff);
+  color: white;
+  font-size: 12px;
+  font-family: main2;
+  border: none;
+  background-color: transparent;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 5px 10px 5px 10px;
+}
+.follow_btn {
+  background: linear-gradient(to left, #c683d7, #eb582bff);
+  color: white;
+  font-size: 12px;
+  font-family: main2;
+  border: none;
+  background-color: transparent;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 5px 10px 5px 10px;
+}
+.follow_btn:active {
+  transform: translate(10px, 10px);
+}
+.top_most_part_feed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btns_for_action {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.action_btns {
+  border: none;
+  background-color: transparent;
+  font-family: main2;
+  font-size: 13px;
+  transition: all 0.5s;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.action_btns:hover {
+  background-color: rgba(72, 58, 88, 1);
+}
+.action_btns:active {
+  background-color: rgba(72, 58, 88, 0.4);
+}
+
+.rating_section {
+  width: inherit;
+  background-color: lightgray;
+}
+.form_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+label {
+  text-align: center;
+}
+.filters_check {
+  display: flex;
+  gap: 10px;
+}
+.checkbox_filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.search_filter_container {
+  display: flex;
+  align-items: center;
+}
+.search_filter {
+  padding: 5px 10px 5px 10px;
+  height: 30px;
+  flex: 1;
+}
+.search_it_btn {
+  font-family: main2;
+  margin-left: -2px;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  height: 44px;
+  border-radius: 0px 20px 20px 0px;
+  background-color: #483a58;
+  color: white;
+  width: 100px;
+}
+.all_filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.search_sort_div {
+  display: flex;
+  flex-direction: column;
+}
+.followed {
+  background: #af83b5;
+}

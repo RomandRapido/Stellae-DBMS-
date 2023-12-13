@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="log_in_page.css">
+	<title></title>
+</head>
+<body>
+	<div class="header">
+		<a id="stellae" href="../feed/home_page.php">Stellae</a>
+		<p class="team_name">Heavenly Bodies</p>
+	</div>
+	<div class="container_mighty">
+		<div id="background2">
+			<div id="answers">
+				<div id="input_div_proponent">
+					<p id="welcome_new_user">Welcome Back to Stellae!</p>
+					<div class="account_log_in">
+						<p id="existing_acc">Don't have an account yet?</p>
+						<button onclick="window.location.href='../signUp/modern_signup.php'" id="sign_up_button">Sign Up</button>
+					</div>
+				</div>
+			</div>
+			<form method="POST" id="loginForm" action="log_in_page.php">
+			<button name="log_in_to_acc" id="log_in_to_acc">Log In &rarrlp;</button>
+		</div>
+		<div id="background">
+			<div id="questions">
+				<div class="cointain">
+					<input class="inputing" type="text" name="email" id="email" required>
+					<p class="placeholder">Email</p>
+				</div>
+				<div class="cointain">
+					<input class="inputing" type="password" name="password" id="password" required>
+					<p class="placeholder">Password</p>
+				</div>
+			</div>
+		</div>
+</form>
+</body>
+</html>

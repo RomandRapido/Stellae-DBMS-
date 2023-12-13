@@ -1,0 +1,251 @@
+@font-face{
+	font-family: main2;
+	src: url("database_fonts\\PPTelegraf-Regular.otf");
+}
+@font-face{
+	font-family: kaftan;
+	src: url("database_fonts\\kaftan-trial.otf");
+}body{
+	margin-top: 100px;
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom: 100px;
+}
+.header{
+	background: linear-gradient(to left,#EB582Bff, #C683D7, #EB582Bff);
+	padding-top: 10px;
+	padding-bottom: 5px;
+	height: 50px;
+	top: 0;
+	right: 0;
+	left: 0;
+	position: fixed;
+	z-index: 1000;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 120px;
+	padding-right: 120px;
+	font-family: main2;
+	align-items: center;
+	font-size: 13px;
+	color: black;
+}
+.account{
+	display: flex;
+	justify-content: space-between;
+	width: 180px;
+	align-items: center;
+}
+.username_image{
+	width: 45px;
+	height: 45px;
+	border-radius: 35px;
+}
+#stellae{
+	font-family: kaftan;
+	color: black;
+	font-size: 20px;
+}
+p{
+	margin: 0;
+}
+.whole_user_with_main_connection{
+	display: grid;
+	grid-template-columns: 1fr 7fr;
+	gap: 25px;
+}
+.main_connection{
+	display: flex;
+	flex-direction: column;
+}
+.account_options{
+	margin-top: 50px;
+}
+.class_incriptions{
+	color: rgb(100, 100, 100, 1.0);
+	font-family: main2;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.connection_btn{
+	border: none;
+	background-color: transparent;
+	font-family: main2;
+	text-align: left;
+	transition: all 0.5s;
+	padding: 5px 10px 5px 10px;
+	width: 100%;
+}
+.connection_btn:hover{
+	color: white;
+	background-color: #40366Aff;
+}
+.connection_btn_2{
+	border: none;
+	background-color: transparent;
+	font-family: main2;
+	text-align: left;
+	transition: all 0.5s;
+	padding: 5px 10px 5px 10px;
+	width: 100%;
+}
+.connection_btn_2:hover{
+	color: white;
+	background-color: #C683D7;
+}
+.all_paper_pages,.butns_n_dropdown_parent{
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+}
+.paper1{
+	font-size: 13px;
+	font-family: main2;
+	padding: 55px 48px ;
+	width: 80%;
+	border: 1px solid black;
+}.paragraph{
+	text-align: justify;
+}
+.butns_n_dropdown{
+	width: 11.06in;
+}#stellae{
+	font-family: kaftan;
+	color: black;
+	font-size: 20px;
+}
+#rating_section{
+	font-size: 12px;
+	font-family: main2;
+	background-color: lightgray;
+	max-height: 708px;
+	overflow:hidden;
+	overflow-y: scroll;
+}
+.form_div{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+label{
+	text-align: center;
+}
+.top_part_rate{
+	margin-bottom: 12px;
+}
+#top_part_comments{
+	display: flex;
+}
+.comment_div{
+	font-family: main2;
+	font-size: 12px;
+	padding: 10px;
+}
+.author_date{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+.comment_date{
+	color: rgb(100, 100, 100, 1.0);
+}
+.comment_author{
+	font-size: 15px;
+	font-weight: bold;
+}
+.comment_div{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.comment_text{
+	margin-top: 10px;
+	margin-bottom: 3px;
+}
+.get_comment{
+	position: absolute;
+	background-color: white;
+}
+#partial_comment_sec{
+	width: 8.55in;
+}
+.type_comment{
+	font-family: main2;
+	width: 94%;
+	resize: none;
+	height: 100px;
+	padding: 20px;
+}
+.comment_div_padd{
+	background-color: rgb(200, 200, 200, 1.0);
+	padding: 10px 30px;
+}
+.turn_flame{
+	background-color: #EB582Bff;
+	font-size: 12px;
+	border: none;
+	color: white;
+	font-family: main2;
+	border-radius: 25px;
+	padding: 5px 20px 5px 20px;
+	transition: all 0.3s;
+	width: auto;
+}
+.interests_available{
+	font-size: 12px;
+	border: none;
+	color: white;
+	font-family: main2;
+	background-color: #40366Aff;
+	border-radius: 25px;
+	padding: 5px 20px 5px 20px;
+	transition: all 0.3s;
+	width: auto;
+}
+.top_texts{
+	font-family: main2;
+	font-size: 15px;
+	font-weight: bold;
+}
+.date_content{
+	font-size: 12px;
+	color: rgb(100, 100, 100, 1.0);
+}
+#button_containers{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+.profile_top_top{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.profile_image_picture{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	object-fit: cover;
+}
+input[type="submit"],.comment_button{
+	border: none;
+	font-family: main2;
+	font-size: 12px;
+	padding: 5px 10px;
+	background-color: rgb(200, 200, 200);
+	transition: all 0.5s;
+	cursor: pointer;
+}
+.comment_button:hover{
+	background: linear-gradient(to left, #C683D7, #EB582Bff);
+	color: white;
+}
+input[type="submit"]:hover{
+	background: linear-gradient(to left, #C683D7, #EB582Bff);
+	color: white;
+}.liked {
+	background-color: #C683D7; 
+  }
