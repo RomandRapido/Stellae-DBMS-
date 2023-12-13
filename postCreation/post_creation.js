@@ -37,17 +37,25 @@ function getRandomQuestion() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const inputTitle = document.getElementById("input_title");
-  const inputInterest = document.getElementById("input_interest");
-  const textAreaPost = document.getElementById("myEditor");
-
-  const isInputTitleBlank = !inputTitle || inputTitle.value.trim() === "";
-  const isTextAreaPostBlank = !textAreaPost || textAreaPost.value.trim() === "";
+  let inputTitleGlobal = null;
+  let inputInterestGlobal = null;
+  let textAreaPostGlobal = null;
 
   const publicButton = document.querySelector('input[name="public"]');
   const privateButton = document.querySelector('input[name="private"]');
 
   publicButton.addEventListener("click", function () {
+    const inputTitle = document.getElementById("input_title");
+    const inputInterest = document.getElementById("input_interest");
+    const textAreaPost = document.getElementById("myEditor");
+
+    inputTitleGlobal = inputTitle;
+    inputInterestGlobal = inputInterest;
+    textAreaPostGlobal = textAreaPost;
+
+    const isInputTitleBlank = !inputTitle.value;
+    const isTextAreaPostBlank = !textAreaPost.value;
+
     if (!isInputTitleBlank && !isTextAreaPostBlank) {
       submitFormData("Public");
     } else {
@@ -56,10 +64,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   privateButton.addEventListener("click", function () {
+    const inputTitle = document.getElementById("input_title");
+    const inputInterest = document.getElementById("input_interest");
+    const textAreaPost = document.getElementById("myEditor");
+
+    inputTitleGlobal = inputTitle;
+    inputInterestGlobal = inputInterest;
+    textAreaPostGlobal = textAreaPost;
+
+    const isInputTitleBlank = !inputTitle.value;
+    const isTextAreaPostBlank = !textAreaPost.value;
+
     if (!isInputTitleBlank && !isTextAreaPostBlank) {
       submitFormData("Private");
     } else {
-      alert("Please don't leave title and content area blank");
+      console.log(isInputTitleBlank);
+      console.log(isTextAreaPostBlank);
+      alert("Please don't leave title and content area blank safdasfsa");
     }
   });
 
@@ -70,20 +91,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function submitFormData(buttonClicked) {
     const formData = new FormData();
-    formData.append("title", inputTitle.value);
-    formData.append("interests", inputInterest.value);
+    formData.append("title", inputTitleGlobal.value);
+    formData.append("interests", inputInterestGlobal.value);
 
     if (initialPostId) {
       formData.append("postId", initialPostId);
     }
 
-    const cleanedContent = stripHtmlTags(textAreaPost.value);
+    const cleanedContent = stripHtmlTags(textAreaPostGlobal.value);
     const firstFiveLines = cleanedContent.split("\n").slice(0, 5).join("\n");
 
     formData.append("preview", firstFiveLines);
-    formData.append("content", textAreaPost.value);
+    formData.append("content", textAreaPostGlobal.value);
     formData.append("buttonClicked", buttonClicked);
-    console.log(textAreaPost.value);
     const endpoint = "testing.php";
 
     fetch(endpoint, {
