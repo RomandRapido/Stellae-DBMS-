@@ -49,9 +49,11 @@
 
 			$array_columns = implode(',', $array_columns);
 
-			$queryNew = "INSERT INTO users (first_name,last_name,email,user_name,password_hash,education_level_id,school_id,profile_descriptions,program) VALUES ('$userUpdate[0]','$userUpdate[1]','$userUpdate[2]','$userUpdate[3]','$userUpdate[4]',$userUpdate[5],$userUpdate[6],'$userUpdate[7]','$userUpdate[8]')";
+			$queryNew = "INSERT INTO users (first_name, last_name, email, user_name, password_hash, education_level_id, school_id, profile_descriptions, program) 
+			VALUES ('$userUpdate[0]', '$userUpdate[1]', '$userUpdate[2]', '$userUpdate[3]', '$userUpdate[4]', $userUpdate[5], $userUpdate[6], '$userUpdate[7]', '$userUpdate[8]')";
 			echo $queryNew;
 			$resultNew = mysqli_query($conn, $queryNew);
+
 			if (!$resultNew){die("Insert user info failed");}
 			echo '<script>alert("Registration Successful")</script>';
 			header('Location: ../../logIn/log_in_page.html');
