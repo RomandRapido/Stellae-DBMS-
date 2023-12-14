@@ -74,7 +74,7 @@ echo "</script>\n";
 ?>
 </head>
 <body>
-	<form onsubmit='return validate_inputs(["f_name_name","l_name_name","user_name_name"],["email_input","pass_input"])' action="php_modal_connection/update_data.php" method="POST" id="update_del_form" class="form_update_delete_user open_close" enctype="multipart/form-data">
+	<form onsubmit='return validateAndSubmit(["f_name_name","l_name_name","user_name_name"],["email_input","pass_input"])' action="php_modal_connection/update_data.php" method="POST" id="update_del_form" class="form_update_delete_user open_close" enctype="multipart/form-data">
 		<fieldset class="update_profile">
 			<fieldset id="contain2" class="cointain">
 				<img class="profile_image" id='preview' alt='preview'>
@@ -379,7 +379,9 @@ echo "</script>\n";
 									$result = mysqli_query($conn, $sql_query);
 									$row = mysqli_fetch_row($result);
 									$row = array_sum($row) / count($row);
-									$mean[]=$row;
+									if ($row){
+										$mean[]=$row;
+									}
 								}
 								if (count($mean)>0){
 									$mean = round((array_sum($mean) / count($mean)),2);

@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 	$dbServer = 'localhost';
 	$dbUserName = 'Romand';
 	$dbPass = 'Romand';
@@ -9,15 +9,15 @@
 	if (!$conn){die("Cannot connect to database");}
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(isset($_POST['submit'])){
-			$f_name = $_POST['f_name'];
-			$l_name = $_POST['l_name'];
-			$email = $_POST['email'];
-			$username = $_POST['username'];
-			$password_mo = password_hash($_POST['pass_word'],PASSWORD_DEFAULT);
-			$education = $_POST['education'];
-			$school = $_POST['school'];
-			$description = $_POST['description'];
-			$program = $_POST['program'];
+			$f_name = ucwords(trim($_POST['f_name']));
+			$l_name = ucwords(trim($_POST['l_name']));
+			$email = trim($_POST['email']);
+			$username = trim($_POST['username']);
+			$password_mo = password_hash($_POST['pass_word'], PASSWORD_DEFAULT);
+			$education = ucwords(trim($_POST['education']));
+			$school = trim($_POST['school']);
+			$description = trim($_POST['description']);
+			$program = trim($_POST['program']);
 			$interests = $_POST['interests'];
 
 			if ($school) {
@@ -35,10 +35,7 @@
 			if($education){
 				$education = intval($education);
 			}
-			if($interests){
-				$interests = explode(',',$interests);
-				$interests = array_map('intval',$interests);
-			}
+			
 
 			$userUpdate = array($f_name,$l_name,$email,$username,$password_mo,
 								$education,$school,$description,$program);
@@ -49,29 +46,23 @@
 
 			$array_columns = implode(',', $array_columns);
 
-			$queryNew = "INSERT INTO users (first_name, last_name, email, user_name, password_hash, education_level_id, school_id, profile_descriptions, program) 
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-			$stmt = mysqli_prepare($conn, $queryNew);
-
-			if (!$stmt) {
-				die("Error in preparing the statement: " . mysqli_error($conn));
+			$queryNew = "INSERT INTO users (first_name, last_name, email, user_name, password_hash, education_level_id, school_id, profile_descriptions, program) VALUES ('$userUpdate[0]', '$userUpdate[1]', '$userUpdate[2]', '$userUpdate[3]', '$userUpdate[4]', $userUpdate[5], $userUpdate[6], '$userUpdate[7]', '$userUpdate[8]')";
+			$resultNew = mysqli_query($conn, $queryNew);
+			if (!$resultNew){die("Insert user info failed");}
+			$insertedPrimaryKey = mysqli_insert_id($conn);
+			if($interests){
+				$interests = explode(",", $interests);
+				foreach($interests as $int_) {
+				    $queryNew = "INSERT INTO user_interests (user_id,interest_id) VALUES ($insertedPrimaryKey, $int_)";
+				    $resultNew = mysqli_query($conn, $queryNew);
+				    if (!$resultNew) {
+				        die("Insert user interests failed");
+				    }
+				}
 			}
-
-			mysqli_stmt_bind_param($stmt, "sssssisss", $userUpdate[0], $userUpdate[1], $userUpdate[2], $userUpdate[3], $userUpdate[4], $userUpdate[5], $userUpdate[6], $userUpdate[7], $userUpdate[8]);
-
-			$resultNew = mysqli_stmt_execute($stmt);
-
-			if (!$resultNew) {
-				die("Insert user info failed: " . mysqli_error($conn));
-			}
-
-			echo '<script>alert("Registration Successful")</script>';
-			header('Location: ../../logIn/log_in_page.html');
-
-			mysqli_stmt_close($stmt);
-			mysqli_close($conn);
 		}
+		echo "<script>alert('Registration Successful'); window.location.href='../../login/log_in_page.html';</script>";
+		exit();
 		
 	}
 

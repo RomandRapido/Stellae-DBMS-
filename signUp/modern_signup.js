@@ -5,29 +5,37 @@ const patterns = {
     "password": /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()-_+=<>?]).{6,28}$/
 };
 function validate_inputs(arr_text,arr){
-    arr_text.forEach(function(value){
-        let input_txt = document.getElementById(value);
-        if(!patterns.name.test(input_txt.value)){
-            alert(`Error: Number Detected on ${input_txt.name}`);
-            return false;
-        }
-    });
+    debugger;
+    let f_name = document.getElementById(arr_text[0]);
+    if(!patterns.name.test(f_name.value)){
+        alert(`Error: Invalid First Name Detected`);
+        return false;
+    }
+    debugger;
+    let l_name = document.getElementById(arr_text[1]);
+    if(!patterns.name.test(l_name.value)){
+        alert(`Error: Invalid Last Name Detected`);
+        return false;
+    }
+    debugger;
     let userName = document.getElementById(arr_text[2]);
     if(!patterns.username.test(userName.value)){
         alert(`Error: Invalid Username Detected`);
         return false;
     }
-
+    debugger;
     let email_txt  =document.getElementById(arr[0]);
     if(!patterns.email.test(email_txt.value)){
         alert(`Error: Invalid Email Detected`);
         return false;
     }
+    debugger;
     let password_txt  =document.getElementById(arr[1]);
     if(!patterns.password.test(password_txt.value)){
         alert(`Error: Password should be at least 6 characters with a capital letter, a small letter, a number, and one special character`);
         return false;
     }
+    debugger;
     $.ajax({
         url:'return_uniqueness.php',
         type:'POST',
