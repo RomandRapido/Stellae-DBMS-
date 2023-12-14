@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!isInputTitleBlank && !isTextAreaPostBlank) {
       submitFormData("Public");
     } else {
-      alert("Please don't leave title and content area blank");
+      alert("Please don't leave title and content area blank (or) Touch the title and text area");
     }
   });
 
@@ -207,3 +207,52 @@ function redirectToPage(index, UserId) {
     }
   }
 }
+
+function filterDesiredInterests(input_tag_id,input_tag_container){
+    let toParse = document.getElementById(input_tag_id).value;
+    let toParse_container = document.getElementById(input_tag_container);
+    toParse_container.innerHTML = '';
+    $.ajax({url:'return_given_schools.php',
+            method: 'POST',
+            data:{action: 'interest_get',value: toParse},
+            success: function(result) {
+                let interests = JSON.parse(result);
+                if(interests.length > 0){            
+                    let ul = document.createElement('ul');
+                    interests.forEach(function(interest) {
+                        let list = document.createElement('li');
+                        list.id = interest['interest_id'];
+                        list.classList.add('interest_from_sql');
+                        list.innerHTML = interest['interest_name'];
+                        ul.appendChild(list);
+                    });
+            
+                    toParse_container.appendChild(ul);
+                }else{
+                    let ul = document.createElement('ul');
+                    let list = document.createElement('li');
+                    list.classList.add('interest_from_sql');
+                    list.innerHTML = toParse;
+                    ul.appendChild(list);
+                    toParse_container.appendChild(ul);
+                }
+            }
+        });
+}
+$('#input_interest').data('dataArray',[]);
+$(document).ready(function(){
+    $('#interestOptions_div').on('click','li',function(){
+        let interestName = $(this).text();
+        let existingArray = $('#input_interest').data('dataArray');
+        if (!existingArray){
+            existingArray=[];
+        }
+        if($.inArray(interestName,existingArray) == -1){
+            existingArray.push(interestName);
+        }
+        $('#input_interest').val(existingArray.join(','));
+        $('#input_interest').data('dataArray', $('#input_interest').val().split(','));
+        //let attValue = $('#input_school_type').data('data');
+        $('#interestOptions_div').empty();
+    });
+});

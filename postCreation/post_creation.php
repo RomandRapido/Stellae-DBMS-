@@ -27,6 +27,7 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="post_creation.css">
 	<link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 	<div class="header">
@@ -62,10 +63,12 @@
 						<p class="placeholder">Post Title</p>
 					</div>
 					<div class="related_tags_parent">
+						
 						<div class="cointain">
-							<input id="input_interest" class="inputing" type="text" name="" required>
+							<input oninput="filterDesiredInterests('input_interest','interestOptions_div');" id="input_interest" class="inputing" type="text" name="" required>
 							<p class="placeholder">Related Tags</p>
 						</div>
+						<div id="interestOptions_div"></div>
 						<div class="related_tags">
 							<?php 
 								$interest_array = array('Mathematics',
