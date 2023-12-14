@@ -6,6 +6,7 @@ const patternsTo = {
   };
   function validateAndSubmit(arr_text, arr) {
 	let isValid = validate_inputs(arr_text, arr);
+	console.log(isValid);
 	return isValid;
   }function validate_inputs(arr_text, arr) {
 	let f_name = document.getElementById(arr_text[0]).value;
@@ -35,29 +36,8 @@ const patternsTo = {
 	  alert(`Error: Password should be at least 6 characters with a capital letter, a small letter, a number, and one special character`);
 	  return false;
 	}
-  $.ajax({
-		url: 'uniqueness_checker.php',
-		method: 'POST',
-		data: {
-		  action: 'return_bool',
-		  data: JSON.stringify({ user_n: userName, email_n: email_x })
-		},
-			  success: function(response){
-				  let result = JSON.parse(response);
-		  
-			  if (result.result.status) {
-				return true;
-			  } else {
-				alert('Error: User or email already exists');
-				return false;
-			  }
-			  }
-	  });
-  
-   
+	return true;
   }
-  
-  
   
   function toggle_scale(id) {
 	let form = document.getElementById(id);

@@ -9,16 +9,42 @@
 	$conn = mysqli_connect($dbServer,$dbUserName,$dbPass,$dbName);
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(isset($_POST['update_submit'])){
-			$f_name = $_POST['f_name'];
-			$l_name = $_POST['l_name'];
-			$email = $_POST['email'];
-			$username = $_POST['username'];
-			$password_mo = $_POST['password_mo'];
-			$education = $_POST['education'];
-			$school = $_POST['school'];
-			$description = $_POST['description'];
-			$program = $_POST['program'];
+			$f_name = ucwords(trim($_POST['f_name']));
+			$l_name = ucwords(trim($_POST['l_name']));
+			$email = trim($_POST['email']);
+			$username = trim($_POST['username']);
+			$password_mo = password_hash($_POST['password_mo'], PASSWORD_DEFAULT);
+			$education = ucwords(trim($_POST['education']));
+			$school = trim($_POST['school']);
+			$description = trim($_POST['description']);
+			$program = trim($_POST['program']);
 			$interests = $_POST['interests'];
+
+			
+			if (isset($email) && !empty($email)) {
+				$stmtEmail = $conn->prepare("SELECT COUNT(*) AS count FROM users WHERE LOWER(email) = ?");
+				$stmtEmail->bind_param("s", $email);
+				$stmtEmail->execute();
+				$resultEmail = $stmtEmail->get_result();
+				$rowEmail = $resultEmail->fetch_assoc();
+				if ($rowEmail['count'] !== 0) {
+					echo "<script>alert('Email already taken'); window.location.href='../account_view.php?UserId=" . $_SESSION['user_id'] . "';</script>";
+					exit();
+				}
+			}
+			
+			if (isset($username) && !empty($username)) {
+				$stmtUsername = $conn->prepare("SELECT COUNT(*) AS count FROM users WHERE user_name = ?");
+				$stmtUsername->bind_param("s", $username);
+				$stmtUsername->execute();
+				$resultUsername = $stmtUsername->get_result();
+				$rowUsername = $resultUsername->fetch_assoc();
+				if ($rowUsername['count'] !== 0) {
+					echo "<script>alert('Username already taken'); window.location.href='../account_view.php?UserId=" . $_SESSION['user_id'] . "';</script>";
+					exit();
+				}
+			}
+			
 			echo '<pre>';
 			print_r($school);
 			echo '</pre>';
@@ -81,7 +107,8 @@
 			}else {
 				echo 'Error uploading the file: ' . $_FILES['filename']['error'];
 			}
-			header('Location: ../account_view.php?UserId=' . $_SESSION['user_id']);	
+			header('Location: ../account_view.php?UserId=' . $_SESSION['user_id']);
+			exit();
 		}elseif (isset($_POST['delete_submit'])){
 			mysqli_begin_transaction($conn);
 			try {
