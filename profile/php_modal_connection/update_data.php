@@ -52,13 +52,17 @@
 				if (is_numeric($school)) {
 					$school = intval($school);
 				} else {
-					$queryKo = "INSERT INTO school_options (school_name) VALUES ('$school')";
-					$resultMo = mysqli_query($conn, $queryKo);  // Fix variable name here
-					$queryKo = "SELECT MAX(school_id) FROM school_options";
-					$resultMo = mysqli_query($conn, $queryKo);  // Fix variable name here
-					$row = mysqli_fetch_row($resultMo);
-					$school = intval($row[0]);
-				}				
+					$queryMaxId = "SELECT MAX(school_id) AS max_id FROM school_options";
+					$resultMaxId = mysqli_query($conn, $queryMaxId);
+			
+					$fetchedNumber = mysqli_fetch_assoc($resultMaxId);
+					$fetchedLastIdPlusOne = $fetchedNumber['max_id'] + 1;
+			
+					$queryInsert = "INSERT INTO school_options (school_id, school_name) VALUES ($fetchedLastIdPlusOne, '$school')";
+					$resultInsert = mysqli_query($conn, $queryInsert);
+			
+					$school = $fetchedLastIdPlusOne;
+				}
 			}
 			if($education){
 				$education = intval($education);
