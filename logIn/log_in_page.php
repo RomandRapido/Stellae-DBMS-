@@ -12,7 +12,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
         
-        $email = $_POST['email'];
+        $email = strtolower($_POST['email']);
         $passwordInput = $_POST['password'];
 
         $query = "SELECT user_id, user_name, password_hash FROM users WHERE email='$email'";

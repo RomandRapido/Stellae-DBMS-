@@ -307,7 +307,7 @@
 //         global_var_values[global_var_index_postion] = store_value;
 //       }
 //       }
-      
+
 //     }
 //   } catch (TypeError) {
 //   }
@@ -351,7 +351,6 @@
 //     active_profile_button(global_var_index_postion + 1);
 //   }
 // }
-
 
 // function checkInputValidity(jsArray) {
 //   var userAgreedCheckbox = document.getElementById("user_agreed");
@@ -427,8 +426,6 @@
 //     });
 // }
 
-
-
 // function submitRegister(jsArray) {
 //   var xhr = new XMLHttpRequest();
 //   xhr.open('POST', 'sample.php', true);
@@ -442,7 +439,7 @@
 //         alert("Registration successful! Please Login");
 //         window.location.href = '../logIn/log_in_page.html';
 //       } else {
-//         alert(xhr.responseText); 
+//         alert(xhr.responseText);
 //       }
 //     }
 //   };

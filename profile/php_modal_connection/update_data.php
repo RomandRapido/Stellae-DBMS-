@@ -9,15 +9,15 @@
 	$conn = mysqli_connect($dbServer,$dbUserName,$dbPass,$dbName);
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(isset($_POST['update_submit'])){
-			$f_name = ucwords(trim($_POST['f_name']));
-			$l_name = ucwords(trim($_POST['l_name']));
-			$email = trim($_POST['email']);
+			$f_name = ucwords(strtolower(trim($_POST['f_name'])));
+			$l_name = ucwords(strtolower(trim($_POST['l_name'])));
+			$email = strtolower(trim(($_POST['email'])));
 			$username = trim($_POST['username']);
 			$password_mo = password_hash($_POST['password_mo'], PASSWORD_DEFAULT);
-			$education = ucwords(trim($_POST['education']));
-			$school = trim($_POST['school']);
+			$education = ucwords(strtolower(trim($_POST['education'])));
+			$school = ucwords(strtolower(trim($_POST['school'])));
 			$description = trim($_POST['description']);
-			$program = trim($_POST['program']);
+			$program = ucwords(strtolower(trim($_POST['program'])));
 			$interests = $_POST['interests'];
 
 			

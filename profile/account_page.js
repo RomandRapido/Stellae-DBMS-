@@ -1,6 +1,6 @@
 const patterns = {
   name: /^[a-zA-Z_ ]+$/,
-	username: /^[a-zA-Z_]+$/,
+  username: /^[a-zA-Z_]+$/,
   email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
   password: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()-_+=<>?]).{6,28}$/,
 };

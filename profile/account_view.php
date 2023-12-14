@@ -67,11 +67,11 @@
 	<script src="account_page.js"></script>
 	<script src="modal_update.js"></script>
 	<?php
-		echo "<script>\n";
-		echo "initializeSearchQuery(" . json_encode($getPapersQuery) . ");";
-		echo "initializeUserId(" . json_decode($userId) .");";
-		echo "</script>\n";
-	?>
+echo "<script>\n";
+echo "initializeSearchQuery(" . json_encode($getPapersQuery) . ");";
+echo "initializeUserId(" . json_decode($userId) .");";
+echo "</script>\n";
+?>
 </head>
 <body>
 	<form onsubmit='return validateAndSubmit(["f_name_name","l_name_name","user_name_name"],["email_input","pass_input"])' action="php_modal_connection/update_data.php" method="POST" id="update_del_form" class="form_update_delete_user open_close" enctype="multipart/form-data">
